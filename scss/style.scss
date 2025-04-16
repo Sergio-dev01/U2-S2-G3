@@ -1,27 +1,22 @@
 @import "./animations";
+@import "./buttons";
 @import "./colors";
 @import "./fonts";
+@import "./mixins";
+@import "./positions";
+@import "./resets";
 @import "./sizes";
 @import "./spacings";
-@import "./positions";
-@import "./animations";
-@import "./buttons";
-@import "./mixins";
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
 
 body {
-  background-color: $primary-color;
-  font-family: $font-primary;
+  background-color: $light-color;
+  font-family: $font-default;
+  line-height: 1.6;
 }
 
-.container {
-  min-height: 400px;
+.showcase {
   background-color: $hero-color;
+  min-height: 600px;
 
   nav {
     display: flex;
@@ -41,19 +36,52 @@ body {
       color: $secondary-color;
     }
   }
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+
+    img {
+      @include floating(16px, 0 16px 36px rgb(0 0 0 / 0.3), 2px solid lighten($hero-color, 30));
+      @include animate-from-top(1s, -100%, 20%, 800ms);
+      width: 50%;
+    }
+    h1 {
+      @include title-big;
+      @include animate-from-top(1s, 10px, 0, 300ms);
+    }
+    p {
+      @include animate-from-top(1s, 10px, 0, 600ms);
+      color: lighten($hero-color, 40);
+      font-size: $font-size-medium;
+      line-height: 1.6;
+      letter-spacing: 1px;
+      padding-inline-end: 3rem;
+    }
+    button:first-of-type {
+      @include animate-from-top(1s, 10px, 0, 800ms);
+    }
+    button:nth-of-type(2) {
+      @include animate-from-top(1s, 10px, 0, 900ms);
+    }
+    button:last-of-type {
+      @include animate-from-top(1s, 10px, 0, 1000ms);
+    }
+  }
 }
 
-.container-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2rem;
-}
+main {
+  position: relative;
 
-.grid {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: $positions;
-  margin-top: 30px;
+  .line-4 {
+    @include grid(4);
+    div {
+      padding-inline: 0.5rem;
+      img {
+        width: 100%;
+        @include floating;
+      }
+    }
+  }
 }

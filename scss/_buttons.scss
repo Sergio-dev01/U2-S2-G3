@@ -3,6 +3,10 @@
   border-radius: 5px;
   padding: $padding-default;
   margin: 3px;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(0.98);
+  }
 }
 
 $btn-colors: (
