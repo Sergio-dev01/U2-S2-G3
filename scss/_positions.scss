@@ -1,0 +1,9 @@
+$positions: (5, 10, 15, 20, 25, 30, 35, 40, 45, 50);
+
+@each $position in $positions {
+  $val: $position * 1%;
+
+  .translate-#{$position} {
+    translate: 0 $val;
+  }
+}

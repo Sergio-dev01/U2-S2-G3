@@ -1,0 +1,59 @@
+@import "./animations";
+@import "./colors";
+@import "./fonts";
+@import "./sizes";
+@import "./spacings";
+@import "./positions";
+@import "./animations";
+@import "./buttons";
+@import "./mixins";
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $primary-color;
+  font-family: $font-primary;
+}
+
+.container {
+  min-height: 400px;
+  background-color: $hero-color;
+
+  nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    ul {
+      display: flex;
+      list-style-type: none;
+    }
+    li {
+      padding: 15px;
+    }
+    a {
+      color: $light-color;
+    }
+    a:hover {
+      color: $secondary-color;
+    }
+  }
+}
+
+.container-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2rem;
+}
+
+.grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: $positions;
+  margin-top: 30px;
+}
